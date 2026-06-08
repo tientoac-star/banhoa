@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết sản phẩm – DTNShop</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">DTNShop</a>
+
+  <div class="search-box">
+    <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+  </div>
+
+  <nav>
+    <button onclick="goToPage('index')">Tất cả</button>
+    <button onclick="goToPage('lang')">Hoa Bó</button>
+    <button onclick="goToPage('bo')">Hoa Bình</button>
+    <button class="cart-nav-btn" id="cartNavBtn" onclick="window.location.href='cart.html'" title="Xem giỏ hàng">
+      🛒 <span class="badge" id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<main class="product-detail">
+  <p class="breadcrumb"><a href="index.html">Trang chủ</a> / <span id="breadcrumbName">Chi tiết sản phẩm</span></p>
+
+  <div id="productContent">
+    <div class="detail-container">
+      <div class="detail-image">
+        <img id="productImg" src="" alt="">
+      </div>
+
+      <div class="detail-info">
+        <h1 class="title" id="productName"></h1>
+        <p class="price" id="productPrice"></p>
+
+        <div class="quantity-box">
+          <label>Số lượng</label>
+          <div class="quantity">
+            <button id="minus">−</button>
+            <span id="qty">1</span>
+            <button id="plus">+</button>
+          </div>
+        </div>
+
+        <div class="action">
+          <button class="add-cart" id="addCartBtn">Thêm vào giỏ</button>
+          <button class="buy-now" id="buyNowBtn">Mua ngay</button>
+        </div>
+
+        <div class="desc">
+          <h3>Chi tiết sản phẩm</h3>
+          <ul id="productDesc"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="notFound" class="not-found" style="display:none">
+    <h2>Sản phẩm không tồn tại</h2>
+    <a href="index.html">← Quay về trang chủ</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h2>DTNShop</h2>
+      <p>Hotline: 1900 8888</p>
+      <p>Email: DTN06@gmail.com</p>
+      <p>Địa chỉ: 234 Hoàng Quốc Việt</p>
+    </div>
+    <div class="footer-col">
+      <h3>Trần Hải Nam</h3>
+      <p>MSV: 24810320376</p>
+      <p>Hotline: 0702 033 188</p>
+    </div>
+    <div class="footer-col">
+      <h3>Hoàng Văn Tiến</h3>
+      <p>MSV: 24810320428</p>
+      <p>Hotline: 0961 769 780</p>
+    </div>
+    <div class="footer-col">
+      <h3>Nguyễn Tuấn Đạt</h3>
+      <p>MSV: 24810320643</p>
+      <p>Hotline: 0961 773 435</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 DTNShop. Tất cả quyền được bảo lưu.</div>
+</footer>
+
+<button id="scrollTopBtn" style="display:none">↑</button>
+<div class="toast" id="toast"></div>
+
+<!-- ORDER MODAL -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Thông tin đặt hàng</h2>
+      <button class="close" id="closeModal">&times;</button>
+    </div>
+    <input type="text" placeholder="Họ và tên *" id="name">
+    <span class="field-error" id="nameError">Vui lòng nhập họ tên</span>
+    <input type="text" placeholder="Số điện thoại *" id="phone">
+    <span class="field-error" id="phoneError">Vui lòng nhập số điện thoại hợp lệ</span>
+    <input type="text" placeholder="Địa chỉ giao hàng" id="address">
+    <button id="submitOrder">Đặt hàng ngay</button>
+  </div>
+</div>
+
+<script src="utils.js"></script>
+<script src="detail.js"></script>
+</body>
+</html>

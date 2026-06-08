@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DTNShop - Hoa Bó</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">DTNShop</a>
+
+  <div class="search-box">
+    <input type="text" placeholder="Tìm kiếm hoa bó..." id="searchInput">
+  </div>
+
+  <nav>
+    <button onclick="goToPage('index')">Tất cả</button>
+    <button class="active">Hoa Bó</button>
+    <button onclick="goToPage('bo')">Hoa Bình</button>
+    <button class="cart-nav-btn" onclick="window.location.href='cart.html'" title="Xem giỏ hàng">
+      🛒 <span class="badge" id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<div class="filter-bar">
+  <span class="filter-label">Giá:</span>
+  <div class="filter-group">
+    <button class="filter-btn active" data-filter="price:all">Tất cả</button>
+    <button class="filter-btn" data-filter="price:under2m">Dưới 2M</button>
+    <button class="filter-btn" data-filter="price:2to5m">2M – 5M</button>
+    <button class="filter-btn" data-filter="price:over5m">Trên 5M</button>
+  </div>
+  <div class="filter-divider"></div>
+  <select class="sort-select" id="sortSelect">
+    <option value="default">Mặc định</option>
+    <option value="asc">Giá tăng dần</option>
+    <option value="desc">Giá giảm dần</option>
+  </select>
+</div>
+
+<main>
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🌸</div>
+    <p>Không tìm thấy sản phẩm phù hợp</p>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <div class="product" data-name="bó hoa cẩm tú cầu mix tulip giấy ren" data-price="2050000" data-category="bo">
+      <a href="detail.html?id=1" class="product-img-wrap">
+        <img src="anh/bo1.jpg" alt="Bó hoa cẩm tú cầu mix tulip giấy ren">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=1">Bó hoa cẩm tú cầu mix tulip giấy ren</a></h3>
+        <p class="product-price">2.050.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa form tròn tone hồng sz xxl" data-price="4550000" data-category="bo">
+      <a href="detail.html?id=2" class="product-img-wrap">
+        <img src="anh/bo2.avif" alt="Bó hoa form tròn tone hồng sz xxl">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=2">Bó hoa form tròn tone hồng sz xxl</a></h3>
+        <p class="product-price">4.550.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa giấy hồng trắng mix giấy ngọc trai" data-price="1650000" data-category="bo">
+      <a href="detail.html?id=3" class="product-img-wrap">
+        <img src="anh/bo3.avif" alt="Bó hoa giấy hồng trắng mix giấy ngọc trai">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=3">Bó hoa giấy hồng trắng mix giấy ngọc trai</a></h3>
+        <p class="product-price">1.650.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa giấy hồng tone hồng trắng" data-price="1350000" data-category="bo">
+      <a href="detail.html?id=4" class="product-img-wrap">
+        <img src="anh/bo4.avif" alt="Bó hoa giấy hồng tone hồng trắng">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=4">Bó hoa giấy hồng tone hồng trắng</a></h3>
+        <p class="product-price">1.350.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa giấy trắng xanh tone hồng nhạt" data-price="1350000" data-category="bo">
+      <a href="detail.html?id=5" class="product-img-wrap">
+        <img src="anh/bo5.avif" alt="Bó hoa giấy trắng xanh tone hồng nhạt">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=5">Bó hoa giấy trắng xanh tone hồng nhạt</a></h3>
+        <p class="product-price">1.350.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa giấy đen tone trắng cam nâu" data-price="1850000" data-category="bo">
+      <a href="detail.html?id=6" class="product-img-wrap">
+        <img src="anh/bo6.avif" alt="Bó hoa giấy đen tone trắng cam nâu">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=6">Bó hoa giấy đen tone trắng cam nâu</a></h3>
+        <p class="product-price">1.850.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa tone cam nâu" data-price="1550000" data-category="bo">
+      <a href="detail.html?id=7" class="product-img-wrap">
+        <img src="anh/bo7.avif" alt="Bó hoa tone cam nâu">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=7">Bó hoa tone cam nâu</a></h3>
+        <p class="product-price">1.550.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa tone trắng xanh lá" data-price="1850000" data-category="bo">
+      <a href="detail.html?id=8" class="product-img-wrap">
+        <img src="anh/bo8.avif" alt="Bó hoa tone trắng xanh lá">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=8">Bó hoa tone trắng xanh lá</a></h3>
+        <p class="product-price">1.850.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa tone xanh vàng hồng" data-price="2050000" data-category="bo">
+      <a href="detail.html?id=9" class="product-img-wrap">
+        <img src="anh/bo9.avif" alt="Bó hoa tone xanh vàng hồng">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=9">Bó hoa tone xanh vàng hồng</a></h3>
+        <p class="product-price">2.050.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa giấy ren ngọt ngào" data-price="2500000" data-category="bo">
+      <a href="detail.html?id=10" class="product-img-wrap">
+        <img src="anh/bo10.avif" alt="Bó hoa giấy ren ngọt ngào">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=10">Bó hoa giấy ren ngọt ngào</a></h3>
+        <p class="product-price">2.500.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa tone xanh cá tính" data-price="3550000" data-category="bo">
+      <a href="detail.html?id=11" class="product-img-wrap">
+        <img src="anh/bo11.avif" alt="Bó hoa tone xanh cá tính">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=11">Bó hoa tone xanh cá tính</a></h3>
+        <p class="product-price">3.550.000₫</p>
+      </div>
+    </div>
+
+    <div class="product" data-name="bó hoa tulip đỏ thanh lịch" data-price="1250000" data-category="bo">
+      <a href="detail.html?id=12" class="product-img-wrap">
+        <img src="anh/bo12.avif" alt="Bó hoa tulip đỏ thanh lịch">
+      </a>
+      <div class="product-info">
+        <h3><a href="detail.html?id=12">Bó hoa tulip đỏ thanh lịch</a></h3>
+        <p class="product-price">1.250.000₫</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h2>DTNShop</h2>
+      <p>Hotline: 1900 8888</p>
+      <p>Email: DTN06@gmail.com</p>
+      <p>Địa chỉ: 234 Hoàng Quốc Việt</p>
+    </div>
+    <div class="footer-col">
+      <h3>Trần Hải Nam</h3>
+      <p>MSV: 24810320376</p>
+      <p>Hotline: 0702 033 188</p>
+      <p>Email: trhnam116@gmail.com</p>
+    </div>
+    <div class="footer-col">
+      <h3>Hoàng Văn Tiến</h3>
+      <p>MSV: 24810320428</p>
+      <p>Hotline: 0961 769 780</p>
+      <p>Email: tientoac17012006@gmail.com</p>
+    </div>
+    <div class="footer-col">
+      <h3>Nguyễn Tuấn Đạt</h3>
+      <p>MSV: 24810320643</p>
+      <p>Hotline: 0961 773 435</p>
+      <p>Email: comrade1801@gmail.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 DTNShop. Tất cả quyền được bảo lưu.</div>
+</footer>
+
+<button id="scrollTopBtn" style="display:none">↑</button>
+<div class="toast" id="toast"></div>
+
+<script src="utils.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng – DTNShop</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">DTNShop</a>
+
+  <div class="search-box">
+    <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+  </div>
+
+  <nav>
+    <button onclick="window.location.href='index.html'">Tất cả</button>
+    <button onclick="window.location.href='lang.html'">Hoa Bó</button>
+    <button onclick="window.location.href='bo.html'">Hoa Bình</button>
+    <button class="cart-nav-btn active" onclick="window.location.href='cart.html'">
+      🛒 <span class="badge" id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<main class="cart-page">
+  <p class="breadcrumb"><a href="index.html">Trang chủ</a> / Giỏ hàng</p>
+
+  <!-- Trạng thái giỏ rỗng -->
+  <div id="emptyCart" class="cart-empty" style="display:none">
+    <div class="empty-icon">🛒</div>
+    <h2>Giỏ hàng của bạn đang trống</h2>
+    <p>Hãy khám phá các sản phẩm hoa tươi đẹp của chúng tôi!</p>
+    <a href="index.html">Tiếp tục mua sắm</a>
+  </div>
+
+  <!-- Nội dung giỏ hàng -->
+  <div id="cartContent" class="cart-layout" style="display:none">
+
+    <!-- CỘT TRÁI: Danh sách sản phẩm -->
+    <div class="cart-items-col">
+      <div class="cart-items-header">
+        <h2>Giỏ hàng (<span id="itemCount">0</span> sản phẩm)</h2>
+        <button class="clear-cart-btn" id="clearCartBtn">Xóa tất cả</button>
+      </div>
+      <div id="cartList"></div>
+    </div>
+
+    <!-- CỘT PHẢI: Tổng + Form đặt hàng -->
+    <div class="cart-summary">
+      <h3>Tổng đơn hàng</h3>
+
+      <div class="summary-row">
+        <span>Tạm tính (<span id="summaryCount">0</span> sản phẩm)</span>
+        <span id="summarySubtotal">0₫</span>
+      </div>
+      <div class="summary-row">
+        <span>Phí vận chuyển</span>
+        <span class="free-ship">Miễn phí</span>
+      </div>
+      <hr class="summary-divider">
+      <div class="summary-total-row">
+        <span>Tổng cộng</span>
+        <span class="total-price" id="summaryTotal">0₫</span>
+      </div>
+
+      <div class="checkout-section">
+        <h3>Thông tin nhận hàng</h3>
+
+        <input type="text" id="name" placeholder="Họ và tên *" autocomplete="name">
+        <span class="field-error" id="nameError">Vui lòng nhập họ tên</span>
+
+        <input type="tel" id="phone" placeholder="Số điện thoại *" autocomplete="tel">
+        <span class="field-error" id="phoneError">Số điện thoại không hợp lệ (9–11 chữ số)</span>
+
+        <input type="text" id="address" placeholder="Địa chỉ giao hàng" autocomplete="street-address">
+
+        <textarea id="note" placeholder="Ghi chú đơn hàng (tuỳ chọn)..."></textarea>
+
+        <button class="checkout-btn" id="checkoutBtn">Đặt hàng ngay</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Đặt hàng thành công -->
+  <div id="orderSuccess" class="order-success" style="display:none">
+    <div class="success-icon">✅</div>
+    <h3>Đặt hàng thành công!</h3>
+    <p>Shop sẽ liên hệ xác nhận đơn hàng trong thời gian sớm nhất.<br>Cảm ơn bạn đã tin tưởng <strong>DTNShop</strong>!</p>
+    <a href="index.html">← Tiếp tục mua sắm</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h2>DTNShop</h2>
+      <p>Hotline: 1900 8888</p>
+      <p>Email: DTN06@gmail.com</p>
+      <p>Địa chỉ: 234 Hoàng Quốc Việt</p>
+    </div>
+    <div class="footer-col">
+      <h3>Trần Hải Nam</h3>
+      <p>MSV: 24810320376</p>
+      <p>Hotline: 0702 033 188</p>
+      <p>Email: trhnam116@gmail.com</p>
+    </div>
+    <div class="footer-col">
+      <h3>Hoàng Văn Tiến</h3>
+      <p>MSV: 24810320428</p>
+      <p>Hotline: 0961 769 780</p>
+      <p>Email: tientoac17012006@gmail.com</p>
+    </div>
+    <div class="footer-col">
+      <h3>Nguyễn Tuấn Đạt</h3>
+      <p>MSV: 24810320643</p>
+      <p>Hotline: 0961 773 435</p>
+      <p>Email: comrade1801@gmail.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 DTNShop. Tất cả quyền được bảo lưu.</div>
+</footer>
+
+<button id="scrollTopBtn" style="display:none">↑</button>
+<div class="toast" id="toast"></div>
+
+<script src="utils.js"></script>
+<script src="cart.js"></script>
+</body>
+</html>
